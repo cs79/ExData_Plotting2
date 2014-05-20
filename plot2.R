@@ -18,7 +18,7 @@ unzip("./data/NEIdata.zip", exdir="./data")
 nei <- readRDS("./data/summarySCC_PM25.rds")
 scc <- readRDS("./data/Source_Classification_Code.rds")
 
-## get totals for Baltimore (subset on fips == "24510"), then aggregate by year
+## get Baltimore data (subset on fips == "24510"), then aggregate totals by year
 balt <- nei[nei$fips=="24510",]
 baltYears <- aggregate(balt$Emissions, by=list(Year = balt$year), FUN=sum)
 

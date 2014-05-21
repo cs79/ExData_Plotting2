@@ -18,7 +18,7 @@ nei <- readRDS("./data/summarySCC_PM25.rds")
 scc <- readRDS("./data/Source_Classification_Code.rds")
 
 ## get subset of Baltimore data (fips == "24510") and aggregate by year and type
-balt <- nei[nei$fips=="24510",])
+balt <- nei[nei$fips=="24510",]
 sumByYearType <- aggregate(balt$Emissions, 
                            by=list(Year=balt$year, Type=balt$type), FUN=sum)
 
@@ -28,8 +28,8 @@ png(file = "plot3.png", width = 800, height = 400, units = "px")
 ## plot the totals faceted by type
 library(ggplot2)
 qplot(data=sumByYearType, Year, x, facets = .~Type, 
-      main="Baltimore, MD Total Emission Trends by Source Type", xlab="Year",
-      ylab="Total Emissions")
+      main="Baltimore, MD Total PM2.5 Emission Trends by Source Type", 
+      xlab="Year", ylab="Total Emissions (tons)")
 
 ## close graphics device
 dev.off()

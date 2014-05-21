@@ -19,14 +19,14 @@ nei <- readRDS("./data/summarySCC_PM25.rds")
 scc <- readRDS("./data/Source_Classification_Code.rds")
 
 ## get totals by year
-totals <- aggregate(nei$Emissions, by=list(Year =nei$year), FUN=sum)
+totals <- aggregate(nei$Emissions, by=list(Year = nei$year), FUN=sum)
 
 ## open graphics device
 png(file = "plot1.png", width = 480, height = 480, units = "px")
 
 ## plot
-plot(totals$Year, totals$x, pch=19, main="Total Emissions per Year", xlab="Year", 
-     ylab="Total Emissions", xlim=c(1998, 2010))
+plot(totals$Year, totals$x, pch=19, main="Total PM2.5 Emissions per Year", 
+     xlab="Year", ylab="Total Emissions (tons)", xlim=c(1998, 2010))
 abline(lm(totals$x ~ totals$Year))
 text(totals$Year + 0.5, totals$x, labels=c("1999", "2002", "2005", "2008"))
 

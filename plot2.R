@@ -27,8 +27,8 @@ png(file = "plot2.png", width = 480, height = 480, units = "px")
 
 ## plot
 plot(baltYears$Year, baltYears$x, pch=19, 
-     main="Total Yearly Emissions: Baltimore, MD Data", xlab="Year", 
-     ylab="Total Emissions", xlim=c(1998, 2010))
+     main="Total Yearly PM2.5 Emissions: Baltimore, MD Data", xlab="Year", 
+     ylab="Total Emissions (tons)", xlim=c(1998, 2010))
 abline(lm(baltYears$x ~ baltYears$Year))
 text(baltYears$Year + 0.5, baltYears$x, 
      labels=c("1999", "2002", "2005", "2008"))

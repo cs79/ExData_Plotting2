@@ -17,7 +17,7 @@ unzip("./data/NEIdata.zip", exdir="./data")
 nei <- readRDS("./data/summarySCC_PM25.rds")
 scc <- readRDS("./data/Source_Classification_Code.rds")
 
-## get Baltimore subset
+## get Baltimore subset (fips == "24510")
 balt <- nei[nei$fips=="24510",]
 
 ## get motor vehicle sources, subset the Baltimore data on those, aggregate

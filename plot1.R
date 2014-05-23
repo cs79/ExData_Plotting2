@@ -25,7 +25,7 @@ totals <- aggregate(nei$Emissions, by=list(Year = nei$year), FUN=sum)
 png(file = "plot1.png", width = 480, height = 480, units = "px")
 
 ## plot
-plot(totals$Year, totals$x, pch=19, main="Total PM2.5 Emissions per Year", 
+plot(totals$Year, totals$x, pch=19, main="Total PM2.5 Emissions per Year, United States", 
      xlab="Year", ylab="Total Emissions (tons)", xlim=c(1998, 2010))
 abline(lm(totals$x ~ totals$Year))
 text(totals$Year + 0.5, totals$x, labels=c("1999", "2002", "2005", "2008"))

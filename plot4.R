@@ -29,7 +29,7 @@ png(file = "plot4.png", width = 480, height = 480, units = "px")
 
 ## plot
 plot(coalEmByYear$Year, coalEmByYear$x, pch=19, 
-     main="Total Yearly PM2.5 Emissions: Coal Combustion Sources", xlab="Year", 
+     main="Total Yearly PM2.5 Emissions, U.S. - Coal Combustion Sources", xlab="Year", 
      ylab="Total Coal Emissions (tons)", xlim=c(1998, 2010))
 abline(lm(coalEmByYear$x ~ coalEmByYear$Year))
 text(coalEmByYear$Year + 0.5, coalEmByYear$x, 
